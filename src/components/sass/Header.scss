@@ -23,7 +23,7 @@ header {
     height: calc($hh + 1.5rem);
 
     @media only screen and (max-width: 468px) {
-      padding: 1.5rem 3%;
+      padding: 1.5rem 5%;
     }
 
     .logo {
@@ -90,6 +90,10 @@ header {
         justify-content: center;
         font-size: 13px;
         text-transform: uppercase;
+
+        @media only screen and (max-width: 320px) {
+          display: none;
+        }
       }
 
       .menu {

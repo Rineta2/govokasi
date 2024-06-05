@@ -17,32 +17,18 @@ import { useInView } from "react-intersection-observer";
 
 export default function page() {
 
-  const [lastInView, setLastInView] = useState(false);
-  const { ref: inViewRef, inView } = useInView();
-
-  useEffect(() => {
-    if (inView && !lastInView) {
-      setLastInView(true);
-    } else if (!inView && lastInView) {
-      setLastInView(false);
-    }
-  }, [inView, lastInView]);
+  const { ref: inView } = useInView();
 
   const NumberComponent = ({ n }) => {
-    const { ref, inView } = useInView();
+    const { ref, inView: numberInView } = useInView();
 
     const { number } = useSpring({
-      from: { number: lastInView ? n : 0 },
+      from: { number: numberInView ? n : 0 },
       to: { number: inView ? n : 0 },
       delay: 100,
       reset: false,
-      onStart: () => console.log('onStart'),
       config: { mass: 1, tension: 20, friction: 10 },
     });
-
-    useEffect(() => {
-      console.log('onStart');
-    }, []);
 
     return (
       <div ref={ref}>
