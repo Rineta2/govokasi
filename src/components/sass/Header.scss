@@ -1,0 +1,110 @@
+@import './globals.scss';
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 7%;
+    height: calc($hh + 1.5rem);
+
+    @media only screen and (max-width: 468px) {
+      padding: 1.5rem 5%;
+    }
+
+    .logo {
+      img {
+        width: 150px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .nav__list {
+      display: flex;
+      gap: 2.5rem;
+
+      @media only screen and (max-width: 768px) {
+        position: absolute;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: $body-c;
+        gap: 4rem;
+        padding: 3rem 0;
+        transform: translateX(100%);
+        transition: all .3s ease-in-out;
+        opacity: 0;
+      }
+
+      &.open {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      li {
+        a {
+          color: $body-c;
+          font-size: $normal-fs;
+          text-transform: uppercase;
+
+          @media only screen and (max-width: 768px) {
+            font-size: $h1-fs;
+            color: $title-c;
+          }
+        }
+      }
+    }
+
+    .nav__actions {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+
+      .btn {
+        color: $body-c;
+        width: 130px;
+        height: 40px;
+        background-color: $primary-c;
+        border-radius: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+
+      .menu {
+        display: none;
+        margin-top: .5rem;
+
+        @media only screen and (max-width: 768px) {
+          display: block;
+        }
+
+        .close {
+          position: absolute;
+          top: 1.5rem;
+          right: 1.5rem;
+          width: 40px;
+          height: 40px;
+        }
+
+        .toggle {
+          font-size: 1.3rem;
+          color: $title-c;
+        }
+      }
+    }
+  }
+}
