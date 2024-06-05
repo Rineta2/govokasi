@@ -6,6 +6,14 @@ header {
   left: 0;
   right: 0;
   z-index: 999;
+  transition: all .3s ease-in-out;
+
+  &.fixed {
+    background-color: rgba(0, 0, 0, .15);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .15);
+  }
 
   .nav {
     display: flex;
@@ -15,7 +23,7 @@ header {
     height: calc($hh + 1.5rem);
 
     @media only screen and (max-width: 468px) {
-      padding: 1.5rem 5%;
+      padding: 1.5rem 3%;
     }
 
     .logo {

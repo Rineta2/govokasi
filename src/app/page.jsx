@@ -1,5 +1,5 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { homeImg, homeImg2, dataHome, dataHome2, dataHome3 } from '@/components/data/data'
 
@@ -11,7 +11,45 @@ import { TypeAnimation } from 'react-type-animation';
 
 import Link from 'next/link'
 
+import { useSpring, animated } from "@react-spring/web";
+
+import { useInView } from "react-intersection-observer";
+
 export default function page() {
+
+  const [lastInView, setLastInView] = useState(false);
+  const { ref: inViewRef, inView } = useInView();
+
+  useEffect(() => {
+    if (inView && !lastInView) {
+      setLastInView(true);
+    } else if (!inView && lastInView) {
+      setLastInView(false);
+    }
+  }, [inView, lastInView]);
+
+  const NumberComponent = ({ n }) => {
+    const { ref, inView } = useInView();
+
+    const { number } = useSpring({
+      from: { number: lastInView ? n : 0 },
+      to: { number: inView ? n : 0 },
+      delay: 100,
+      reset: false,
+      onStart: () => console.log('onStart'),
+      config: { mass: 1, tension: 20, friction: 10 },
+    });
+
+    useEffect(() => {
+      console.log('onStart');
+    }, []);
+
+    return (
+      <div ref={ref}>
+        <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>
+      </div>
+    );
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,8 +76,6 @@ export default function page() {
             <div className='bg' key={item.id}>
               <Image src={item.img} alt="home" quality={100} className="parallax__image"
                 loading="lazy"
-                layout="fill"
-                objectFit="cover"
                 data-speed="0.5" />
             </div>
           ))}
@@ -50,7 +86,7 @@ export default function page() {
               {
                 homeImg2.map((item) => {
                   return (
-                    <Image src={item.img} alt="home" quality={100} loading="lazy" />
+                    <Image src={item.img} alt="home" quality={100} loading="lazy" key={item.id} />
                   )
                 })
               }
@@ -102,6 +138,34 @@ export default function page() {
           </div>
         </div>
       </section>
+
+      <div className="count">
+        <div className="counter container">
+          <div className="box">
+            <h1>+<NumberComponent n={6000} /></h1>
+            <h3>Talent Pool</h3>
+            <div className="row"></div>
+          </div>
+
+          <div className="box">
+            <h1>+ <NumberComponent n={120} /></h1>
+            <h3>Startup Partners</h3>
+            <div className="row"></div>
+          </div>
+
+          <div className="box">
+            <h1>+ <NumberComponent n={500} /></h1>
+            <h3>Hours On Training</h3>
+            <div className="row"></div>
+          </div>
+
+          <div className="box">
+            <h1><NumberComponent n={80} />%</h1>
+            <h3>Hours On Training</h3>
+          </div>
+
+        </div>
+      </div>
     </>
   )
 }

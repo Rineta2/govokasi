@@ -16,9 +16,28 @@ import "@/components/sass/Header.scss"
 export default function Header() {
 
   const [open, setOpen] = useState(false)
+  const [fixed, setFixed] = useState(false)
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 0) {
+      setFixed(true);
+    } else {
+      setFixed(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <header>
+    <header className={fixed ? "fixed" : ""}>
       <nav className="nav container">
 
         <div className="logo">
@@ -49,9 +68,7 @@ export default function Header() {
           <div className="menu" onClick={() => setOpen(!open)}>
             {open ? <FaTimes className='close' /> : <RiMenu5Line className='toggle' />}
           </div>
-
         </div>
-
       </nav>
     </header>
   )
