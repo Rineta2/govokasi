@@ -17,7 +17,7 @@ import { useInView } from "react-intersection-observer";
 
 import dynamic from 'next/dynamic'
 
-const Magang = dynamic(() => import("@/components/ui/Magang"), {
+const About = dynamic(() => import("@/components/ui/About"), {
   ssr: false
 })
 
@@ -170,7 +170,7 @@ export default function page() {
         </div>
       </div>
 
-      <Magang />
+      <About />
       <Connect />
       <Services />
     </>

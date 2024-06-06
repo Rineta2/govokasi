@@ -310,7 +310,7 @@
 
 .magang {
   background-color: $primary-c;
-  min-height: 60vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -324,7 +324,7 @@
   }
 
   @media only screen and (max-width: 468px) {
-    min-height: 100vh;
+    min-height: 110vh;
   }
 
   @media only screen and (max-width: 320px) {
@@ -722,7 +722,7 @@
       .box {
         width: 35%;
         background-color: $body-c;
-        height: 450px;
+        height: 550px;
         border-radius: 12px;
         box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .15);
         display: flex;

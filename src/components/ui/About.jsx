@@ -2,9 +2,9 @@ import { magangData, dataButton } from "@/components/data/data"
 
 import Link from "next/link"
 
-export default function magang() {
+export default function About() {
   return (
-    <section className="magang" id='magang'>
+    <section className="magang" id='about'>
       <div className="magang__container container grid">
         <div className="content">
           {

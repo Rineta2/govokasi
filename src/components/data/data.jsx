@@ -29,14 +29,14 @@ export const navLink = [
 
   {
     id: 2,
-    name: "Interns",
-    path: "#interns"
+    name: "About Us",
+    path: "#about"
   },
 
   {
     id: 3,
-    name: "Career Coaching",
-    path: "#career"
+    name: "Services",
+    path: "#services"
   },
 
   {
