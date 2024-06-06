@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 import { homeImg, homeImg2, dataHome, dataHome2, dataHome3 } from '@/components/data/data'
 
@@ -15,18 +15,31 @@ import { useSpring, animated } from "@react-spring/web";
 
 import { useInView } from "react-intersection-observer";
 
+import dynamic from 'next/dynamic'
+
+const Magang = dynamic(() => import("@/components/ui/Magang"), {
+  ssr: false
+})
+
+const Connect = dynamic(() => import("@/components/ui/Connect"), {
+  ssr: false
+})
+
+const Services = dynamic(() => import("@/components/ui/Services"), {
+  ssr: false
+})
+
 export default function page() {
 
-  const { ref: inView } = useInView();
-
   const NumberComponent = ({ n }) => {
-    const { ref, inView: numberInView } = useInView();
+    const { ref, inView } = useInView();
 
     const { number } = useSpring({
-      from: { number: numberInView ? n : 0 },
+      from: { number: 0 },
       to: { number: inView ? n : 0 },
       delay: 100,
       reset: false,
+      onStart: () => console.log('onStart'),
       config: { mass: 1, tension: 20, friction: 10 },
     });
 
@@ -36,6 +49,10 @@ export default function page() {
       </div>
     );
   };
+
+  const C = (props) => <NumberComponent {...props} />;
+  const H = (props) => <NumberComponent {...props} />;
+  const P = (props) => <NumberComponent {...props} />;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -152,6 +169,10 @@ export default function page() {
 
         </div>
       </div>
+
+      <Magang />
+      <Connect />
+      <Services />
     </>
   )
 }
