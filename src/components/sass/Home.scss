@@ -210,8 +210,13 @@
     padding: 4rem 2rem;
   }
 
+  @media only screen and (max-width: 468px) {
+    min-height: 70vh;
+  }
+
   @media only screen and (max-width: 320px) {
     min-height: 100vh;
+    margin-top: 2rem;
   }
 
   .counter {
@@ -637,6 +642,10 @@
   background-color: $primary-c;
   min-height: 80vh;
 
+  @media only screen and (max-width: 992px) {
+    min-height: 50vh;
+  }
+
   .services__container {
     padding: 1rem 5%;
     position: relative;
@@ -719,6 +728,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media only screen and (max-width: 468px) {
+          width: 90%;
+        }
 
         form {
           display: flex;
