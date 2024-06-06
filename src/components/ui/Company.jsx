@@ -6,7 +6,7 @@ import Image from "next/image"
 
 import bg from "@/components/assets/company/bg.png"
 
-import { Fade, Zoom } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 
 export default function Company() {
 
