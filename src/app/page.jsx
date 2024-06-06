@@ -1,7 +1,7 @@
 'use client'
 import { useEffect } from 'react'
 
-import { homeImg, homeImg2, dataHome, dataHome2, dataHome3 } from '@/components/data/data'
+import { homeImg, homeImg2, dataHome, dataHome2 } from '@/components/data/data'
 
 import Image from 'next/image'
 
@@ -16,6 +16,10 @@ import { useSpring, animated } from "@react-spring/web";
 import { useInView } from "react-intersection-observer";
 
 import dynamic from 'next/dynamic'
+
+const Company = dynamic(() => import("@/components/ui/Company"), {
+  ssr: false
+})
 
 const About = dynamic(() => import("@/components/ui/About"), {
   ssr: false
@@ -173,6 +177,7 @@ export default function page() {
       <About />
       <Connect />
       <Services />
+      <Company />
     </>
   )
 }

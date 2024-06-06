@@ -41,8 +41,8 @@ export const navLink = [
 
   {
     id: 4,
-    name: "Project Activity",
-    path: "#project"
+    name: "COMPANY VALUES",
+    path: "#company"
   },
 ]
 
@@ -169,5 +169,39 @@ export const dataServices = [
     icons: <FaLightbulb />,
     name: "Cost Efficient Solution",
     desc: "Our solution help companies recruit the best candidates through cost efficient programs."
+  },
+]
+
+//================== Data Layanan ==================//
+
+export const Values = [
+  {
+    id: 1,
+    name: "Innovation",
+    desc: "They encourage creativity in their training and teaching methods to ensure participants gain relevant and up-to-date skills."
+  },
+
+  {
+    id: 2,
+    name: "Collaboration",
+    desc: "They work closely with industry partners to provide internships and job placements that meet market demands."
+  },
+
+  {
+    id: 3,
+    name: "Personal Development",
+    desc: "They focus on continuous training and coaching to help participants improve both soft and hard skills needed in the workforce."
+  },
+
+  {
+    id: 4,
+    name: "Sustainability",
+    desc: " They commit to long-term growth and positive social impact, ensuring their programs benefit participants and the wider community."
+  },
+
+  {
+    id: 5,
+    name: "Integrity",
+    desc: "They operate with high transparency and trust, ensuring all stakeholders are treated fairly and honestly."
   },
 ]

@@ -4,9 +4,13 @@ import { Fragment } from "react";
 
 import dynamic from "next/dynamic";
 
-const Header = dynamic(() => import("@/components/ui/header/Header"));
+const Header = dynamic(() => import("@/components/ui/header/Header"), {
+  ssr: false
+})
 
-const Footer = dynamic(() => import("@/components/ui/footer/Footer"));
+const Footer = dynamic(() => import("@/components/ui/footer/Footer"), {
+  ssr: false
+})
 
 export const metadata = {
   title: "Govokasi",
@@ -17,13 +21,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Fragment>
-          <main>
-            <Header />
-            {children}
-            <Footer />
-          </main>
-        </Fragment>
+        <>
+          <Fragment>
+            <main>
+              <Header />
+              {children}
+              <Footer />
+            </main>
+          </Fragment>
+        </>
       </body>
     </html>
   );
