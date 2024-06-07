@@ -9,10 +9,18 @@ header {
   transition: all .3s ease-in-out;
 
   &.fixed {
-    background-color: rgba(0, 0, 0, .15);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    background-color: $body-c;
     box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, .15);
+
+    .nav {
+      .nav__list {
+        li {
+          a {
+            color: $title-c;
+          }
+        }
+      }
+    }
   }
 
   .nav {
@@ -116,6 +124,72 @@ header {
           font-size: 1.3rem;
           color: $title-c;
         }
+      }
+    }
+  }
+}
+
+footer {
+  padding: 1rem 5%;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 2rem;
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 3px;
+        background-color: $primary-c;
+        bottom: -10px;
+        left: 0;
+        border-radius: 6px;
+        opacity: .5;
+      }
+
+      img {
+        width: 200px;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+
+    .box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      @media only screen and (max-width: 468px) {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: start;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        font-weight: 400;
+
+        @media only screen and (max-width: 992px) {
+          max-width: 50%;
+          line-height: 1.5;
+        }
+
+        @media only screen and (max-width: 468px) {
+          max-width: 100%;
+          line-height: 1.5;
+        }
+      }
+
+      p {
+        font-size: 1.3rem;
       }
     }
   }

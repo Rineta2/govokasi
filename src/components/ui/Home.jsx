@@ -15,6 +15,8 @@ import { useSpring, animated } from "@react-spring/web";
 
 import { useInView } from "react-intersection-observer";
 
+import { Fade } from 'react-awesome-reveal';
+
 export default function Home() {
 
   const NumberComponent = ({ n }) => {
@@ -127,26 +129,46 @@ export default function Home() {
       <div className="count">
         <div className="counter container">
           <div className="box">
-            <h1>+<NumberComponent n={6000} /></h1>
-            <h3>Talent Pool</h3>
+            <Fade duration={1000} triggerOnce cascade direction="down" delay={500}>
+              <h1>+<NumberComponent n={6000} /></h1>
+            </Fade>
+
+            <Fade duration={1000} triggerOnce cascade direction="up" delay={500}>
+              <h3>Talent Pool</h3>
+            </Fade>
             <div className="row"></div>
           </div>
 
           <div className="box">
-            <h1>+ <NumberComponent n={120} /></h1>
-            <h3>Startup Partners</h3>
+            <Fade duration={1000} triggerOnce cascade direction="down" delay={500}>
+              <h1>+ <NumberComponent n={120} /></h1>
+            </Fade>
+
+            <Fade duration={1000} triggerOnce cascade direction="up" delay={500}>
+              <h3>Startup Partners</h3>
+            </Fade>
             <div className="row"></div>
           </div>
 
           <div className="box">
-            <h1>+ <NumberComponent n={500} /></h1>
-            <h3>Hours On Training</h3>
+            <Fade duration={1000} triggerOnce cascade direction="down" delay={500}>
+              <h1>+ <NumberComponent n={500} /></h1>
+            </Fade>
+
+            <Fade duration={1000} triggerOnce cascade direction="up" delay={500}>
+              <h3>Hours On Training</h3>
+            </Fade>
             <div className="row"></div>
           </div>
 
           <div className="box">
-            <h1><NumberComponent n={80} />%</h1>
-            <h3>Hours On Training</h3>
+            <Fade duration={1000} triggerOnce cascade direction="down" delay={500}>
+              <h1><NumberComponent n={80} />%</h1>
+            </Fade>
+
+            <Fade duration={1000} triggerOnce cascade direction="up" delay={500}>
+              <h3>Hours On Training</h3>
+            </Fade>
           </div>
 
         </div>

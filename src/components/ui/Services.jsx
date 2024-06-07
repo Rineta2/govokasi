@@ -15,6 +15,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
+import { Fade } from 'react-awesome-reveal';
 export default function Services() {
 
   const [model, setModel] = useState(false)
@@ -77,7 +78,10 @@ export default function Services() {
       <div className="services__container container grid">
 
         <div className="heading">
-          <h1>Why Choose Us?</h1>
+          <Fade duration={1000} triggerOnce direction="down" delay={500}>
+            <h1>Why Choose Us?</h1>
+          </Fade>
+
           <div onClick={() => setModel(true)} className="button">Click Here To Book An Appointment</div>
         </div>
 
@@ -86,9 +90,17 @@ export default function Services() {
             dataServices.map((item) => {
               return (
                 <div className="box" key={item.id}>
-                  <i>{item.icons}</i>
-                  <h3>{item.name}</h3>
-                  <p>{item.desc}</p>
+                  <Fade duration={1000} triggerOnce delay={500} direction="down">
+                    <i>{item.icons}</i>
+                  </Fade>
+
+                  <Fade duration={1000} triggerOnce delay={500}>
+                    <h3>{item.name}</h3>
+                  </Fade>
+
+                  <Fade duration={1000} triggerOnce delay={500} direction="up">
+                    <p>{item.desc}</p>
+                  </Fade>
                 </div>
               )
             })

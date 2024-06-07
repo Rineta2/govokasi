@@ -2,6 +2,10 @@ import "@/components/sass/Home.scss"
 
 import dynamic from 'next/dynamic'
 
+const Home = dynamic(() => import("@/components/ui/Home"), {
+  ssr: false
+})
+
 const Company = dynamic(() => import("@/components/ui/Company"), {
   ssr: false
 })
@@ -18,9 +22,38 @@ const Services = dynamic(() => import("@/components/ui/Services"), {
   ssr: false
 })
 
-const Home = dynamic(() => import("@/components/ui/Home"), {
+const Charachter = dynamic(() => import("@/components/ui/Charachter"), {
   ssr: false
 })
+
+const Banner = dynamic(() => import("@/components/ui/Banner"), {
+  ssr: false
+})
+
+const Patner = dynamic(() => import("@/components/ui/Patner"), {
+  ssr: false
+})
+
+const Testimonials = dynamic(() => import("@/components/ui/Testimonials"), {
+  ssr: false
+})
+
+const Team = dynamic(() => import("@/components/ui/Team"), {
+  ssr: false
+})
+
+const Potensial = dynamic(() => import("@/components/ui/Potensial"), {
+  ssr: false
+})
+
+const Faq = dynamic(() => import("@/components/ui/Faq"), {
+  ssr: false
+})
+
+const Contact = dynamic(() => import("@/components/ui/Contact"), {
+  ssr: false
+})
+
 
 export default function page() {
 
@@ -31,6 +64,14 @@ export default function page() {
       <Connect />
       <Services />
       <Company />
+      <Charachter />
+      <Banner />
+      <Patner />
+      <Testimonials />
+      <Team />
+      <Potensial />
+      <Faq />
+      <Contact />
     </>
   )
 }

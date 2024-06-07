@@ -1,8 +1,11 @@
+'use client'
 import { dataConnect, dataTitle } from "@/components/data/data"
 
 import Image from "next/image"
 
 import assets from "@/components/assets/bakat/assets.png"
+
+import { Fade } from 'react-awesome-reveal';
 
 export default function Connect() {
   return (
@@ -13,7 +16,9 @@ export default function Connect() {
             {
               dataConnect.map((item) => {
                 return (
-                  <Image src={item.img} alt="connect" key={item.id} quality={100} />
+                  <Fade duration={1000} triggerOnce key={item.id} delay={500}>
+                    <Image src={item.img} alt="connect" key={item.id} quality={100} />
+                  </Fade>
                 )
               })
             }
@@ -25,8 +30,13 @@ export default function Connect() {
 
           <div className="text">
             <div className="heading">
-              <h1>How We Do It ?</h1>
-              <span><b>Connect</b> Talents</span>
+              <Fade duration={1000} triggerOnce direction="down" delay={500}>
+                <h1>How We Do It ?</h1>
+              </Fade>
+
+              <Fade duration={1000} triggerOnce direction="up" delay={500}>
+                <span><b>Connect</b> Talents</span>
+              </Fade>
               <div className="row"></div>
             </div>
             {
@@ -34,11 +44,15 @@ export default function Connect() {
                 return (
                   <div className="box" key={item.id}>
                     <div className="box__icons">
-                      <i>{item.icons}</i>
-                      <h3>{item.name}</h3>
+                      <Fade duration={1000} triggerOnce key={item.id} delay={500}>
+                        <i>{item.icons}</i>
+                        <h3>{item.name}</h3>
+                      </Fade>
                     </div>
 
-                    <p>{item.desc}</p>
+                    <Fade duration={1000} triggerOnce key={item.id} delay={500}>
+                      <p>{item.desc}</p>
+                    </Fade>
                   </div>
                 )
               })

@@ -21,15 +21,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <>
-          <Fragment>
-            <main>
-              <Header />
-              {children}
-              <Footer />
-            </main>
-          </Fragment>
-        </>
+        <Fragment>
+          <main>
+            <Header />
+            {children}
+            <Footer />
+          </main>
+        </Fragment>
       </body>
     </html>
   );
