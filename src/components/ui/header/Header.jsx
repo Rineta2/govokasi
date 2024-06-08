@@ -63,7 +63,7 @@ export default function Header() {
         </ul>
 
         <div className="nav__actions">
-          <Link className="btn" href={""}>Contact Us</Link>
+          <Link className="btn" href={"https://api.whatsapp.com/send/?phone=6281316653083&text&type=phone_number&app_absent=0"}>Contact Us</Link>
 
           <div className="menu" onClick={() => setOpen(!open)}>
             {open ? <FaTimes className='close' /> : <RiMenu5Line className='toggle' />}
