@@ -68,31 +68,36 @@ export const navLink = [
   {
     id: 1,
     name: "Home",
-    path: "/"
+    path: "#home",
+    active: 'home'
   },
 
   {
     id: 2,
     name: "About Us",
-    path: "#about"
+    path: "#about",
+    active: 'about'
   },
 
   {
     id: 3,
     name: "Services",
-    path: "#services"
+    path: "#services",
+    active: 'services'
   },
 
   {
     id: 4,
     name: "COMPANY VALUES",
-    path: "#company"
+    path: "#company",
+    active: 'company'
   },
 
   {
     id: 5,
     name: "Contact",
-    path: "#contact"
+    path: "#contact",
+    active: 'contact'
   },
 ]
 

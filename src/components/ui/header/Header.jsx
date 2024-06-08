@@ -18,6 +18,32 @@ export default function Header() {
   const [open, setOpen] = useState(false)
   const [fixed, setFixed] = useState(false)
 
+  const [activeLink, setActiveLink] = useState("home")
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const sections = document.querySelectorAll('section');
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+
+        if (
+          scrollPosition >= sectionTop - 50 &&
+          scrollPosition < sectionTop + sectionHeight - 50
+        ) {
+          setActiveLink(section.getAttribute('id'));
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
 
@@ -55,7 +81,7 @@ export default function Header() {
             navLink.map((item) => {
               return (
                 <li key={item.id}>
-                  <Link href={item.path}>{item.name}</Link>
+                  <Link href={item.path} className={`nav__link ${activeLink === item.active ? "active" : ""}`} onClick={() => setOpen(!open)}>{item.name}</Link>
                 </li>
               )
             })

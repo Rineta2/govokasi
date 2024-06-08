@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="home">
+      <section className="home" id="home">
         <div className="home__container container grid">
           {homeImg.map((item) => (
             <div className='bg' key={item.id}>

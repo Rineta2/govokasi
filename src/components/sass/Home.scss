@@ -326,7 +326,7 @@
   }
 
   @media only screen and (max-width: 468px) {
-    min-height: 100vh;
+    min-height: 115vh;
   }
 
   @media only screen and (max-width: 320px) {
@@ -973,6 +973,10 @@
             @media only screen and (max-width: 992px) {
               left: -50px;
             }
+
+            @media only screen and (max-width: 468px) {
+              left: 0;
+            }
           }
         }
 
@@ -999,6 +1003,10 @@
 
             @media only screen and (max-width: 992px) {
               right: -20px;
+            }
+
+            @media only screen and (max-width: 468px) {
+              right: 0;
             }
           }
 
@@ -1051,6 +1059,10 @@
             @media only screen and (max-width: 992px) {
               left: -50px;
             }
+
+            @media only screen and (max-width: 468px) {
+              left: 0;
+            }
           }
 
           h1 {
@@ -1099,6 +1111,10 @@
 
             @media only screen and (max-width: 992px) {
               right: -20px;
+            }
+
+            @media only screen and (max-width: 468px) {
+              right: 0;
             }
           }
 
@@ -1150,6 +1166,10 @@
 
             @media only screen and (max-width: 992px) {
               left: -50px;
+            }
+
+            @media only screen and (max-width: 468px) {
+              left: 0;
             }
           }
 

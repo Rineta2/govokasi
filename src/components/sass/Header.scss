@@ -15,8 +15,15 @@ header {
     .nav {
       .nav__list {
         li {
-          a {
+          .nav__link {
             color: $title-c;
+
+            &.active {
+              color: $primary-c;
+              text-decoration: underline $primary-c;
+              text-underline-offset: 5px;
+              transition: all .3s ease-in-out;
+            }
           }
         }
       }
