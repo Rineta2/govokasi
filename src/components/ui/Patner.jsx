@@ -18,7 +18,7 @@ export default function Patner() {
   ]
 
   return (
-    <section className="patner">
+    <section className="patner" id="patner">
       <div className="patner__container container grid">
 
         {

@@ -50,8 +50,8 @@ import contact from "@/components/assets/kontak/kontak.png"
 
 //================== Icons ==================//
 
-import { FaCheckCircle, FaWhatsapp, FaInstagram } from "react-icons/fa";
-import { MdStars, MdOutlineAttachEmail } from "react-icons/md";
+import { FaCheckCircle, FaWhatsapp, FaInstagram, FaInfo, FaUserTie } from "react-icons/fa";
+import { MdStars, MdOutlineAttachEmail, MdAttachEmail } from "react-icons/md";
 import { FaUsers, FaGraduationCap } from "react-icons/fa6";
 import { FaLightbulb, FaArrowAltCircleRight } from "react-icons/fa";
 
@@ -567,4 +567,36 @@ export const footerCopy = [
     id: 1,
     name: "© All Rights Reserved 2022. GOVOKASI."
   }
+]
+
+export const dataSide = [
+  {
+    id: 1,
+    icons: <FaInfo />,
+    path: "#register"
+  },
+
+  {
+    id: 2,
+    icons: <FaUserTie />,
+    path: "#patner"
+  },
+
+  {
+    id: 3,
+    icons: <FaWhatsapp />,
+    path: "https://api.whatsapp.com/send/?phone=6281316653083&text&type=phone_number&app_absent=0"
+  },
+
+  {
+    id: 4,
+    icons: <FaInstagram />,
+    path: "https://www.instagram.com/govokasi/"
+  },
+
+  {
+    id: 5,
+    icons: <MdAttachEmail />,
+    path: "mailto:hello@govokasi.com"
+  },
 ]

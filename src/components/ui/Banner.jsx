@@ -17,7 +17,7 @@ export default function Banner() {
   ]
 
   return (
-    <section className="banner">
+    <section className="banner" id="register">
       <div className="banner__container container grid">
 
         <div className="heading">

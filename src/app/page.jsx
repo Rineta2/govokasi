@@ -54,6 +54,9 @@ const Contact = dynamic(() => import("@/components/ui/Contact"), {
   ssr: false
 })
 
+const Side = dynamic(() => import("@/components/ui/Side"), {
+  ssr: false
+})
 
 export default function page() {
 
@@ -72,6 +75,7 @@ export default function page() {
       <Potensial />
       <Faq />
       <Contact />
+      <Side />
     </>
   )
 }
